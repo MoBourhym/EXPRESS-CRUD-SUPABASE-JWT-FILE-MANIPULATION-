@@ -1,12 +1,14 @@
 # Backend for Employee Management System
 
-This backend service powers the Employee Management System for business administrators to manage employee data, monitor activities, and enhance productivity. It leverages JWT for authentication, Supabase as the database backend, and implements protected routes to ensure secure access to sensitive data.
+This repository contains the backend service for the **Employee Management System** for business administrators. The system allows administrators to manage employee data, monitor activities, and enhance productivity. This backend service leverages JWT for authentication, Supabase for database management, and includes protected routes to ensure secure access to sensitive data.
+
+This backend is part of the [Angular Productivity Application](https://github.com/MoBourhym/Angular-Productivity-Application.git), a full-stack solution for employee management.
 
 ## Features
 
-- **JWT Authentication**: Protects routes with access tokens and refresh tokens.
-- **Supabase Integration**: Uses Supabase for user authentication and database management.
-- **Protected Routes**: Secures API routes that require authentication.
+- **JWT Authentication**: Protects routes using access tokens and refresh tokens.
+- **Supabase Integration**: Utilizes Supabase for user authentication and database management.
+- **Protected Routes**: API routes are secured, requiring valid JWT tokens.
 - **Access Tokens & Refresh Tokens**: Implements token-based authentication for secure communication.
 
 ## Table of Contents
@@ -34,5 +36,5 @@ This backend service powers the Employee Management System for business administ
 To get started, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/backend-repository.git
-cd backend-repository
+git clone "https://github.com/MoBourhym/EXPRESS-CRUD-SUPABASE-JWT-FILE-MANIPULATION-.git"
+cd src
