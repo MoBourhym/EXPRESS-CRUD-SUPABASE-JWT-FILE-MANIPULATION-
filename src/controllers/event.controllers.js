@@ -2,6 +2,7 @@ import { supabase } from "../config/db.js";
 
 // Get all events
 const getAllEvents = async (req, res) => {
+  console.log(req.cookies)
   try {
     const { data, error } = await supabase.from("events").select("*");
     if (error) throw error;

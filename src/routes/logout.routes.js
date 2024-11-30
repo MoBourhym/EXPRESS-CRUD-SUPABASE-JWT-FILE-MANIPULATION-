@@ -3,6 +3,6 @@ import { handleLogout } from "../controllers/logout.controller.js";
 
 const router = express.Router();
 
-router.get("/login", handleLogout);
+router.get("/", handleLogout);
 
 export default router;

@@ -1,10 +1,12 @@
 import express from 'express'; 
-import { insertToBucketTest,getAllEmployees, addEmployee, updateEmployee, deleteEmployee, downloadData } from '../controllers/employee.controllers.js';
+import { insertToBucketTest,getAllEmployees, addEmployee, updateEmployee, deleteEmployee, downloadData, PDF } from '../controllers/employee.controllers.js';
 import upload from '../config/multer.config.js'; // Import the multer configuration
 
 const router = express.Router(); 
 
 router.get('/', getAllEmployees);
+
+
 router.post('/add', upload.fields([
     { name: 'avatar', maxCount: 1 },
     { name: 'cin', maxCount: 1 },

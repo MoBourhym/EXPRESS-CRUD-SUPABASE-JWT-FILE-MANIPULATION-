@@ -21,25 +21,52 @@ const getDayActivity = async (req, res) => {
 
   try {
     const { data, error } = await supabase
-      .from("activities")
-      .select(
-        `
-          activity_id,
-          employees (
-            name,
-            position,
-            avatar,
+    .from("activities")
+    .select(
+      `
+        activity_id,
+        employees:employee_id  (
+          name,
+          position,
+          avatar
 
-          ),
-          in_time,
-          out_time,
-          work_time,
-          break_time,
-          overtime,
-          status
-        `
-      )
-      .eq("activity_date", date); // Query by activity_date
+        ),
+        in_time,
+        out_time,
+        work_time,
+        break_time,
+        overtime,
+        status
+      `
+    )
+
+
+    .select(`
+      employees:employee_id (
+        name,
+        position,
+        avatar,
+        email,
+        number,
+        salary,
+        cin,
+        cnss,
+        department:department_id ( 
+          name
+        )
+      ),
+      activity_id,
+      activity_date,
+      in_time,
+      out_time,
+      work_time,
+      break_time,
+      overtime,
+      status
+    `)
+    .eq("activity_date", date); // Query by activity_date
+
+
 
     if (error) throw error;
 
@@ -64,6 +91,8 @@ const getDayActivity = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+
 const getAverageWorkTime = async (req, res) => {
   try {
     const endDate = new Date();

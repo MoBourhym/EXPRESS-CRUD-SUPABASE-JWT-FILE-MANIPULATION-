@@ -39,7 +39,7 @@ app.use("/refresh", refreshRoute);
 app.use("/logout", logoutRoute);
 
 // Protected routes app.use("/api/events", verifyJWT, eventRoutes);
-app.use("/api/events", eventRoutes);
+app.use("/api/events", verifyJWT,eventRoutes);
 app.use("/api/employees", employeeRoutes);
 app.use("/api/activity",activityRoute);
 app.use("/api/department",departmentRouter);
